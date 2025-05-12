@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <script src="form.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>Регистрация</h1>
+<form method="POST">
+  <label for="name">Имя:</label><input type="text" id="name" name="name" required><br><br>
+  <label for="email">Email:</label><input type="email" id="email" name="email" required><br><br>
+  <label for="password">Пароль:</label><input type="password" id="password" name="password" required><br><br>
+    <label class = "container__radio-label">Пол:</label>
+    <div class="radio">
+        <input type="radio" id="man" name="gender" value="man"><label for="man">Мужской</label>
+                     <input type="radio" id="woman" name="gender" value="woman"><label for="woman">Женский</label>
+    </div>
+      <br>
+  <input type="checkbox" id="check" name="check" required><label for="check"> Я согласен с правилами</label><br><br>
+  <button type="submit">Отправить</button>
+</form>
+</div>
+</body>
+</html>
