@@ -13,7 +13,7 @@ for (let i = 0; i <= 2; i++) {
     let div = document.createElement("div");
     div.className="topic";
     div.innerHTML = `<img class="topicImage" src="https://placehold.co/300x200"></img>`;
-    div.innerHTML += `<h4 class="topicTitle">${parsedAnswer[i].title}</h4>`;
+    div.innerHTML += `<h4 class="topicTitle"><a class="topicLink" href=./topic.html?topicId=${parsedAnswer[i].id}>${parsedAnswer[i].title}</a></h4>`;
     div.innerHTML += `<p class="topicText">${parsedAnswer[i].body}</p>`;
     main.appendChild(div);
 }
