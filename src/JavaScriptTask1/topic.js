@@ -14,12 +14,15 @@ let parsedAnswer = JSON.parse("[ { \"userId\": 1, \"id\": 1, \"title\": \"sunt a
 let main = document.getElementById("mainElement");
 let topicDiv = document.createElement("div");
 topicDiv.className="topic";
+let commentsDiv = document.createElement("div");
+commentsDiv.className="comments";
+
 topicDiv.innerHTML = `<img class="topicImage" src="https://placehold.co/300x200"></img>`;
 topicDiv.innerHTML += `<h4 class="topicTitle">${parsedAnswer[0].title}</h4>`;
 topicDiv.innerHTML += `<p class="topicText">${parsedAnswer[0].body}</p>`;
-let commentsDiv = document.createElement("div");
-commentsDiv.className="comments";
-main.appendChild(div);
+
+main.appendChild(topicDiv);
+main.appendChild(commentsDiv);
 //})();
 
 //{
