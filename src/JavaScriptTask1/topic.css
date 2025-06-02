@@ -16,12 +16,10 @@ header {
 
 footer {
     background-color: #C4C4C4;
-    height: 50px;
-    display: flex;
-    position:absolute;
+    height: 20px;
+    position:sticky;
     bottom:0;
     width:100%;
-    align-items: flex-end;
 }
 
 nav {
@@ -38,9 +36,7 @@ nav {
 }
 
 .mainElement {
-    display: flex;
-    padding: 10% 15% 10% 15%;
-
+    padding: 2% 15% 2% 15%;
 }
 
 .topic {
@@ -48,6 +44,14 @@ nav {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+    border: solid;
+}
+
+.comments {
+    display: block;
+    margin-left: 50px;
+    padding: 2rem;
+    border-radius: 8px;
 }
 
 .topicImage {
@@ -68,6 +72,10 @@ nav {
     height: 30px;
     margin-top: 10px;
     margin-left: 300px;
+}
+
+.commentText {
+    color: black;
 }
 
 h1 {

@@ -9,7 +9,7 @@ let parsedAnswer = JSON.parse(answer);
 console.log(parsedAnswer);
 
 let main = document.getElementById("mainElement");
-for (let i = 0; i <= 2; i++) {
+for (let i = 0; i <= parsedAnswer.length; i++) {
     let div = document.createElement("div");
     div.className="topic";
     div.innerHTML = `<img class="topicImage" src="https://placehold.co/300x200"></img>`;
