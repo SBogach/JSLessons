@@ -17,11 +17,9 @@ header {
 footer {
     background-color: #C4C4C4;
     height: 20px;
-    display: flex;
-    position:absolute;
+    position:sticky;
     bottom:0;
     width:100%;
-    align-items: flex-end;
 }
 
 nav {
@@ -40,7 +38,7 @@ nav {
 .mainElement {
     display: flex;
     padding: 10% 15% 10% 15%;
-
+    flex-wrap: wrap;
 }
 
 .topic {
@@ -48,6 +46,7 @@ nav {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+    width: 300px;
 }
 
 .headerLink {
