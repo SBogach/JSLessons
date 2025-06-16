@@ -8,10 +8,11 @@ function MainContent() {
     const [products, setProducts] = React.useState(null);
 
     React.useEffect(() => {
-         fetch("http://localhost:10800/api/products")
+         fetch("/api/products")
               .then((res) => res.json())
               .then((data) => setProducts(data));
     }, []);
+    console.log(products);
   return (
     <div className="container">
         <Product props={products} />
@@ -20,3 +21,8 @@ function MainContent() {
 }
 
 export default MainContent;
+
+//Надо     <div className="container">
+//               <Product props={products} />
+//           </div>
+//создавать в products.map(..., чтобы их создавалось несколько. А внутри Product уже разбирались свойства.
