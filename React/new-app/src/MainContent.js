@@ -5,7 +5,7 @@ import './MainContent.css';
 import Product from './Product';
 
 function MainContent() {
-    const [products, setProducts] = React.useState(null);
+    const [products, setProducts] = React.useState([]);
 
     React.useEffect(() => {
          fetch("/api/products")
@@ -14,9 +14,13 @@ function MainContent() {
     }, []);
     console.log(products);
   return (
-    <div className="container">
-        <Product props={products} />
-    </div>
+  <div className="productList">
+    {products.map(el => (
+        <div className="container">
+            <Product props={el} />
+        </div>
+    ))}
+  </div>
   );
 }
 

@@ -1,17 +1,11 @@
-function Product({props}) {
-    const res = props?.map(function(item, index) {
-        return
-        <>
-        LOL
-            //<img class="topicImage" src="https://placehold.co/300x200"></img>;
-            //<h4 class="topicTitle">${item.name}</h4>;
-            //<p class="topicText">${item.description}</p>;
-        </>
-    });
+import "./Product.css"
 
+function Product({props}) {
     return <>
-        {res}
-    </>;
+        <img className="topicImage" src={props.images[0].imageUrl}></img>
+        <h4 className="topicTitle">${props.name}</h4>
+        <p className="topicText">${props.description}</p>
+    </>
 }
 
 export default Product;
