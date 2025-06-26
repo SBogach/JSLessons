@@ -4,11 +4,12 @@ import './index.css';
 import Shop from './Shop';
 import reportWebVitals from './reportWebVitals';
 import AppButton from './ReactExample';
+import Chat from './Chat';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppButton />
+    <Chat />
   </React.StrictMode>
 );
 

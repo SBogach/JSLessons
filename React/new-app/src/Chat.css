@@ -1,0 +1,32 @@
+.layout {
+    width: 600px;
+    height: 600px;
+    border: 3px solid;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatBox {
+    height: 90%;
+    width: 95%;
+    border: 1px solid;
+    margin: 12px 10px 0px 10px;
+}
+
+.inputMess {
+    width:295px;
+}
+
+.sendButton {
+    width:295px;
+    background-color: blue;
+}
+
+.User {
+    background-color: blue;
+    text-align: right;
+}
+
+.Bot {
+    color: #C1C1C1;
+}
