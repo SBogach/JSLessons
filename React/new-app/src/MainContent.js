@@ -16,8 +16,8 @@ function MainContent() {
   return (
   <div className="productList">
     {products.map(el => (
-        <div className="container">
-            <Product props={el} />
+        <div key={el.id} className="container">
+            <Product key={el.id} props={el} />
         </div>
     ))}
   </div>
