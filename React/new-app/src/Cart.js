@@ -5,12 +5,13 @@ import './Cart.css';
 import Product from './Product';
 import ProductInCart from './ProductInCart';
 
-function Cart () {
+function Cart ( {prod, onDelete} ) {
     const [products, setProducts] = React.useState([]);
     const [productCount, setProductCount] = React.useState([]);
 
     const onDeleteProduct = (id) => {
         setProducts(products.filter(el => el.id !== id));
+        onDelete(id);
     }
 
     const onChangeCount = (id, newCount) => {
@@ -23,9 +24,7 @@ function Cart () {
     }
 
     React.useEffect(() => {
-         fetch("/api/products")
-              .then((res) => res.json())
-              .then((data) => setProducts(data.map((item) => { return {...item, count: 1} })));
+        setProducts(prod);
     }, []);
 
     console.log(products);
@@ -40,12 +39,16 @@ function Cart () {
           <th>Количество</th>
         </tr>
       </thead>
-      {products.map(el => (
-      <tbody key = {el.id}>
-          <ProductInCart id = {el.id} image = {el.images[0].imageUrl} name={el.name} count={el.count} onDel={onDeleteProduct} onChangeCount={onChangeCount}/>
-          <tr></tr>
-      </tbody>
-      ))}
+      {products.map(el => {
+      if ((el.count !== undefined) && (el.count !== 0)) {
+        return (
+            <tbody key = {el.id}>
+                <ProductInCart id = {el.id} image = {el.images[0].imageUrl} name={el.name} count={el.count} onDel={onDeleteProduct} onChangeCount={onChangeCount}/>
+                <tr></tr>
+            </tbody>
+        )
+      }
+      })}
     </table>
     <button>Сделать заказ</button>
   </div>

@@ -8,7 +8,7 @@ function ProductInCart( {id, image, name, count, onDel, onChangeCount} ) {
         onDel(id);
     }
 
-    const onChange = (id, count) => {
+    const onChange = (count) => {
         onChangeCount(id, count);
     }
 

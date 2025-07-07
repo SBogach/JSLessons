@@ -4,20 +4,22 @@ import avatar from './avatar.jpg';
 import './MainContent.css';
 import Product from './Product';
 
-function MainContent() {
+function MainContent ( {onChangeCount, prod} ) {
     const [products, setProducts] = React.useState([]);
 
+    const onChange = (id) => {
+        onChangeCount(id);
+    }
+
     React.useEffect(() => {
-         fetch("/api/products")
-              .then((res) => res.json())
-              .then((data) => setProducts(data));
-    }, []);
-    console.log(products);
+         setProducts(prod);
+    });
+
   return (
   <div className="productList">
     {products.map(el => (
         <div key={el.id} className="container">
-            <Product key={el.id} props={el} />
+            <Product key={el.id} props={el} onChangeCount={ onChange }/>
         </div>
     ))}
   </div>
