@@ -5,7 +5,7 @@ import './Cart.css';
 import Product from './Product';
 import ProductInCart from './ProductInCart';
 
-function Cart ( {prod, onDelete} ) {
+function Cart ( {prod, onDelete, onChange} ) {
     const [products, setProducts] = React.useState([]);
     const [productCount, setProductCount] = React.useState([]);
 
@@ -21,6 +21,7 @@ function Cart ( {prod, onDelete} ) {
                                                return el;
                                              }
                                 }));
+        onChange(id, newCount);
     }
 
     React.useEffect(() => {

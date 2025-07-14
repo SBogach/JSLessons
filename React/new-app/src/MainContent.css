@@ -38,10 +38,14 @@
 }
 
 .container {
-    background-color: #EFEFEF;
+    background-color: #ffffff;
     width: 300px;
     height: 400px;
     text-align: center;
+    border-radius: 30px;
+    border-width: 3px;
+    border-color: #282c34;
+    box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.2);
 }
 
 .avatar {
@@ -52,12 +56,9 @@
     margin-top: 10%;
 }
 
-button {
-    width: 50px;
-    height: 50px;
-}
 .productList {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    margin: 5px 5px 5px 5px;
 }
