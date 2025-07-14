@@ -10,12 +10,12 @@ function Shop() {
     const [products, setProducts] = useState([]);
 
     React.useEffect(() => {
-               fetch("/api/products")
+               fetch("/products")
                .then((res) => res.json())
                .then((data) => setProducts(data));
     }, []);
 
-    const onChangeCount = (id) => {
+    const onAddCount = (id) => {
         setProducts(products.map(el => {if (el.id === id) {
                                                return {...el, count: 1};
                                              } else {
@@ -24,18 +24,34 @@ function Shop() {
                                 }));
     };
 
-        const onDeleteProduct = (id) => {
-            setProducts(products.filter(el => el.id !== id));
-        }
+    const onDeleteProduct = (id) => {
+        setProducts(products.map(el => {if (el.id === id) {
+                                               return {...el, count: 0};
+                                             } else {
+                                               return el;
+                                             }
+                                }));
+    };
+
+    const onChangeCount = (id, newCount) => {
+        setProducts(products.map(el => {if (el.id === id) {
+                                               return {...el, count: newCount};
+                                             } else {
+                                               return el;
+                                             }
+                                }));
+    };
 
 
   return (
   <>
     <Header />
-    <button onClick={() => setCurrentScreen('main')}>Главная</button>
-    <button onClick={() => setCurrentScreen('cart')}>Корзина</button>
-    {currentScreen == 'main' && <MainContent prod={products} onChangeCount={onChangeCount}/>}
-    {currentScreen == 'cart' && <Cart prod={products} onDelete={onDeleteProduct}/>}
+    <div className='buttonsLayout'>
+      <button className="mainButton" onClick={() => setCurrentScreen('main')}>Главная</button>
+      <button className="cartButton" onClick={() => setCurrentScreen('cart')}>Корзина</button>
+    </div>
+    {currentScreen == 'main' && <MainContent prod={products} onChangeCount={onAddCount}/>}
+    {currentScreen == 'cart' && <Cart prod={products} onDelete={onDeleteProduct} onChange={onChangeCount}/>}
     <Footer />
   </>
   );
