@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './Counter.css'
 
 function Counter( {val, onChange} ) {
     const [count, setCount] = React.useState(val);
@@ -18,9 +19,9 @@ function Counter( {val, onChange} ) {
 
     return (
         <div>
-            <button onClick={countMinus}>-</button>
-            {count}
-            <button onClick={countPlus}>+</button>
+            <button className='minusButton' onClick={countMinus}>-</button>
+            <span style={{fontSize: '20px'}}>{count}</span>
+            <button className='plusButton' onClick={countPlus}>+</button>
         </div>
     );
 }

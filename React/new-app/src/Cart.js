@@ -7,7 +7,6 @@ import ProductInCart from './ProductInCart';
 
 function Cart ( {prod, onDelete, onChange} ) {
     const [products, setProducts] = React.useState([]);
-    const [productCount, setProductCount] = React.useState([]);
 
     const onDeleteProduct = (id) => {
         setProducts(products.filter(el => el.id !== id));
@@ -28,9 +27,12 @@ function Cart ( {prod, onDelete, onChange} ) {
         setProducts(prod);
     }, []);
 
+    const isAnything = products.find(el => el.count > 0);
     console.log(products);
+    console.log(isAnything);
+  if (isAnything !== undefined) {
   return (
-  <div>
+  <div className='cartLayout'>
     <h1>Выбранные товары:</h1>
     <table>
       <thead>
@@ -51,9 +53,16 @@ function Cart ( {prod, onDelete, onChange} ) {
       }
       })}
     </table>
-    <button>Сделать заказ</button>
+    <button className='buyButton'>Сделать заказ</button>
   </div>
   );
+  } else {
+    return (
+      <div className='cartLayout'>
+        <h1>Вы не выбрали ни одного товара. Вернитесь на главную и закажите уже себе что-нибудь!</h1>
+      </div>
+    )
+  }
 }
 
 export default Cart;

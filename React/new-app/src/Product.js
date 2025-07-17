@@ -7,10 +7,10 @@ function Product({props, onChangeCount}) {
     }
 
     return <>
-        <img className="topicImage" src={props.images[0].imageUrl}></img>
+        <img className="topicImage" src={props.images[0].imageUrl ? props.images[0].imageUrl : 'LOL'}></img>
         <h4 className="topicTitle">{props.name}</h4>
         <p className="topicText">{props.description}</p>
-        <button className="topicButton" onClick = {onChange}>Add in cart</button>
+        <button className="topicButton" onClick = {onChange}>Добавить в корзину</button>
     </>
 }
 

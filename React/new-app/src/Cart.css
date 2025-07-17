@@ -49,3 +49,12 @@
     width: 50px;
     height: 50px;
 }
+
+.cartLayout {
+  height: 85vh;
+}
+
+.buyButton {
+  margin-top: 20px;
+  background-color: red;
+}

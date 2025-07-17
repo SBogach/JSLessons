@@ -1,0 +1,16 @@
+.plusButton {
+    border: 0px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(43, 218, 66);
+    margin-left: 5px;
+}
+.minusButton {
+    border: 0px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(77, 161, 230);
+    margin-right: 5px;
+}
