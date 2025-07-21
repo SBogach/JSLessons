@@ -57,6 +57,8 @@
   justify-content: space-between;
   margin: 0px 0px 5px 0px;
   background-color: #FFDAB9;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
 .mainButton {
@@ -65,6 +67,11 @@
 
 .cartButton {
   height: 50px;
+}
+
+.sortSelect {
+  width: 140px;
+  height: 20px;
 }
 
 button {

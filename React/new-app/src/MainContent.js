@@ -11,9 +11,15 @@ function MainContent ( {onChangeCount, prod} ) {
         onChangeCount(id);
     }
 
+    // React.useEffect(() => {
+    //      setProducts(prod);
+    // });
+
     React.useEffect(() => {
+      console.log(prod);
          setProducts(prod);
-    });
+    }, [prod]);
+    
 
   return (
   <div className="productList">
