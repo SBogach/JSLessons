@@ -4,6 +4,10 @@
     margin-top: 10px;
 }
 
+.topicButton {
+    height: 40px;
+}
+
 h1 {
     color: #2c3e50;
 }
