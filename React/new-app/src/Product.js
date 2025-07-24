@@ -1,6 +1,6 @@
 import "./Product.css"
 
-function Product({props, onChangeCount}) {
+function Product({props, onChangeCount, count}) {
 
     const onChange = () => {
         onChangeCount(props.id);
@@ -9,8 +9,10 @@ function Product({props, onChangeCount}) {
     return <>
         <img className="topicImage" src={props.images[0].imageUrl ? props.images[0].imageUrl : 'LOL'}></img>
         <h4 className="topicTitle">{props.name}</h4>
+        <span className="topicTitle">{props.price}$</span>
         <p className="topicText">{props.description}</p>
-        <button className="topicButton" onClick = {onChange}>Добавить в корзину</button>
+        {count ? 'asdfsafd' : <button className="topicButton" onClick = {onChange}>Добавить в корзину</button>}
+        
     </>
 }
 

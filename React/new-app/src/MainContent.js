@@ -11,21 +11,15 @@ function MainContent ( {onChangeCount, prod} ) {
         onChangeCount(id);
     }
 
-    // React.useEffect(() => {
-    //      setProducts(prod);
-    // });
-
     React.useEffect(() => {
-      console.log(prod);
          setProducts(prod);
     }, [prod]);
-    
 
   return (
   <div className="productList">
-    {products.map(el => (
+    {(products ?? []).map(el => (
         <div key={el.id} className="container">
-            <Product key={el.id} props={el} onChangeCount={ onChange }/>
+            <Product key={el.id} props={el} onChangeCount={ onChange } count={prod.count}/>
         </div>
     ))}
   </div>
@@ -33,8 +27,3 @@ function MainContent ( {onChangeCount, prod} ) {
 }
 
 export default MainContent;
-
-//Надо     <div className="container">
-//               <Product props={products} />
-//           </div>
-//создавать в products.map(..., чтобы их создавалось несколько. А внутри Product уже разбирались свойства.
